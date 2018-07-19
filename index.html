@@ -1,36 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang = "en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie=edge">
     <title>Home</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "style.css">
 </head>
-<body onload = "countTimeSJS">
-    <div id="particles-js">
-            
-            <table class = "countCon">
-                <tr class = "textCtrl">
-                    <td colspan = "4"><h1>Site Under Construction</h1></td>
-                </tr>
-                <tr class = "textCtrl">
-                    <td id = "days">00</td>
-                    <td id = "hours">00</td>
-                    <td id = "minutes">00</td>
-                    <td id = "seconds">00</td>
-                </tr>
-                <tr>
-                    <td>Days</td>
-                    <td>Hours</td>
-                    <td>Minutes</td>
-                    <td>Seconds</td>
-                </tr>
-            </table>
-            
+<body>
+    <div id = "particles-js">
+        <div class = "textCtrl">   
+            <h1>Site Under Construction</h1>
+            <div class = "countdown"></div>
+        </div>    
     </div>
 
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src = "https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 
     <script>
         particlesJS.load('particles-js', 'particles.json',
@@ -38,40 +23,5 @@
             console.log('particles.json loaded...')
         })
     </script>
-
-    <script type = "text/javascript">
-
-        function countTimeSJS(){
-        var now = new Date();
-        var eventDate = new Date(2018, 05, 18);
-
-        var currentTime = now.getTime();
-        var eventTime = eventDate.getTime();
-        var remainderTime = eventTime - currentTime;
-
-        var s = Math.floor(remainderTime / 1000);
-        var m = Math.floor(s / 60);
-        var h = Math.floor(m / 60);
-        var d = Math.floor(h / 24);
-
-        h %= 24;
-        m %= 60;
-        s %= 60;
-
-        h = (h < 10) ? "0" + h : h;
-        m = (m < 10) ? "0" + m : m;
-        s = (s < 10) ? "0" + s : s;
-
-        document.getElementById("days").textContent = d;
-        document.getElementById("days").innerText = d;
-
-        document.getElementById("hours").innerText = h;
-        document.getElementById("minutes").innerText = m;
-        document.getElementById("seconds").innerText = s;
-
-        setTimeout(coundown, 1000);
-        }
-
-    </script>
-</body>
+    <script src = "count.js"></script>
 </html>
